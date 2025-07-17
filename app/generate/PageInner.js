@@ -8,7 +8,10 @@ const Page = () => {
   const params = useSearchParams();
   const [links, setlinks] = useState([{ link: "", linktext: "" }]);
   const [handle, sethandle] = useState(params.get("handle") || "");
-  const [pic, setpic] = useState("");
+  // const [pic, setpic] = useState("");
+  const [pic, setpic] = useState(null); // File object
+const [previewUrl, setPreviewUrl] = useState(""); // for preview
+
   const [desc, setdesc] = useState("");
   const router = useRouter();
 
@@ -24,31 +27,63 @@ const Page = () => {
     setlinks([...links, { link: "", linktext: "" }]);
   };
 
-  const submitlinks = async () => {
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
+  // const submitlinks = async () => {
+  //   const myHeaders = new Headers();
+  //   myHeaders.append("Content-Type", "application/json");
 
-    const raw = JSON.stringify({ links, handle, pic, desc });
-    const requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: raw,
-    };
+  //   const raw = JSON.stringify({ links, handle, pic, desc });
+  //   const requestOptions = {
+  //     method: "POST",
+  //     headers: myHeaders,
+  //     body: raw,
+  //   };
 
-    let r = await fetch("/api/add", requestOptions);
-    let res = await r.json();
+  //   let r = await fetch("/api/add", requestOptions);
+  //   let res = await r.json();
+
+  //   if (res.success) {
+  //     toast.success(res.message);
+  //     setlinks([{ link: "", linktext: "" }]);
+  //     setpic("");
+  //     setdesc("");
+  //     sethandle("");
+  //     router.push(`/${handle}`);
+  //   } else {
+  //     toast.error(res.message);
+  //   }
+  // };
+const submitlinks = async () => {
+  const formData = new FormData();
+  formData.append("handle", handle);
+  formData.append("desc", desc);
+  formData.append("pic", pic);
+  formData.append("links", JSON.stringify(links)); // convert array to string
+
+  const requestOptions = {
+    method: "POST",
+    body: formData,
+  };
+
+  try {
+    const r = await fetch("/api/add", requestOptions);
+    const res = await r.json();
 
     if (res.success) {
       toast.success(res.message);
       setlinks([{ link: "", linktext: "" }]);
-      setpic("");
+      setpic(null);
+      setPreviewUrl("");
       setdesc("");
       sethandle("");
       router.push(`/${handle}`);
     } else {
       toast.error(res.message);
     }
-  };
+  } catch (error) {
+    toast.error("Something went wrong");
+    console.error(error);
+  }
+};
 
   return (
     <>
@@ -91,13 +126,34 @@ const Page = () => {
               + Add Link
             </button>
             <p className="font-bold pb-1 pt-3">Step 3: Add Picture * and Bio</p>
-            <input
+            {/* <input
               value={pic}
               onChange={(e) => setpic(e.target.value)}
               className="bg-white px-4 w-1/2 py-1 rounded-full"
               type="text"
               placeholder="Enter your picture *"
-            />
+            /> */}
+            <input
+  onChange={(e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setpic(file);
+      setPreviewUrl(URL.createObjectURL(file));
+    }
+  }}
+  accept="image/*"
+  className="bg-white px-4 w-1/2 py-1 rounded-full"
+  type="file"
+/>
+
+{previewUrl && (
+  <img
+    src={previewUrl}
+    alt="Preview"
+    className="w-32 h-32 mt-2 rounded-full object-cover border"
+  />
+)}
+
             <input
               value={desc}
               onChange={(e) => setdesc(e.target.value)}
