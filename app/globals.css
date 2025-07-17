@@ -154,3 +154,233 @@ p{
     font-size: small;
   }
 }
+@media only screen 
+  and (device-width: 430px) 
+  and (device-height: 932px) 
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    
+  /* Your styles here */
+  nav button{
+    display: none;
+  }
+ 
+  nav{
+    width: 90vw;
+    position: absolute;
+    right: 5%;
+    top: 10px;
+  }
+   nav ul :nth-child(3){
+    display: none;
+    background-color: rgb(13, 2, 84);
+  }
+
+  .homemain{
+    display: flex;
+    position: absolute;
+    top: 20%;
+    padding-top: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .h1{
+    line-height: 29px;
+    /* width: 90vw; */
+    font-size: xx-large;
+  }
+  .para{
+    font-size: small;
+    letter-spacing: 1;
+    text-align: center;
+  }
+  .inpbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .input{
+    width: 70%;
+  }
+
+  .btn{
+    width: 70%;
+    display: flex;
+    font-size: small;
+  }
+  
+}
+@media only screen 
+  and (device-width: 412px) 
+  and (device-height: 915px) 
+  and (-webkit-device-pixel-ratio: 2.625)
+  and (orientation: portrait) {
+
+  /* Your custom styles for Pixel 7 here */
+  nav button{
+    display: none;
+  }
+ 
+  nav{
+    width: 90vw;
+    position: absolute;
+    right: 5%;
+    top: 10px;
+  }
+   nav ul :nth-child(3){
+    display: none;
+    background-color: rgb(13, 2, 84);
+  }
+
+  .homemain{
+    display: flex;
+    position: absolute;
+    top: 20%;
+    padding-top: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .h1{
+    line-height: 29px;
+    /* width: 90vw; */
+    font-size: xx-large;
+  }
+  .para{
+    font-size: small;
+    letter-spacing: 1;
+    text-align: center;
+  }
+  .inpbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .input{
+    width: 70%;
+  }
+
+  .btn{
+    width: 70%;
+    display: flex;
+    font-size: small;
+  }
+}
+@media only screen 
+  and (device-width: 412px) 
+  and (device-height: 915px) 
+  and (-webkit-device-pixel-ratio: 3.5)
+  and (orientation: portrait) {
+
+  /* Custom styles for Galaxy S20 Ultra Portrait */
+ nav button{
+    display: none;
+  }
+ 
+  nav{
+    width: 90vw;
+    position: absolute;
+    right: 5%;
+    top: 10px;
+  }
+   nav ul :nth-child(3){
+    display: none;
+    background-color: rgb(13, 2, 84);
+  }
+
+  .homemain{
+    display: flex;
+    position: absolute;
+    top: 20%;
+    padding-top: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .h1{
+    line-height: 29px;
+    /* width: 90vw; */
+    font-size: xx-large;
+  }
+  .para{
+    font-size: small;
+    letter-spacing: 1;
+    text-align: center;
+  }
+  .inpbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .input{
+    width: 70%;
+  }
+
+  .btn{
+    width: 70%;
+    display: flex;
+    font-size: small;
+  }
+}
+
+@media only screen 
+  and (device-width: 744px) 
+  and (device-height: 1133px) 
+  and (-webkit-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+  /* Styles for iPad Mini Portrait */
+ nav button{
+    display: none;
+  }
+ 
+  nav{
+    width: 90vw;
+    position: absolute;
+    right: 5%;
+    top: 10px;
+  }
+   nav ul :nth-child(3){
+    display: none;
+    background-color: rgb(13, 2, 84);
+  }
+  #id{
+    display: grid;
+    grid-column: auto;
+  }
+
+  .homemain{
+    display: flex;
+    position: absolute;
+    top: 20%;
+    padding-top: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .h1{
+    line-height: 29px;
+    /* width: 90vw; */
+    font-size: xx-large;
+  }
+  .para{
+    font-size: small;
+    letter-spacing: 1;
+    text-align: center;
+  }
+  .inpbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .input{
+    width: 70%;
+  }
+
+  .btn{
+    width: 70%;
+    display: flex;
+    font-size: small;
+  }
+}

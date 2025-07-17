@@ -89,7 +89,7 @@ const submitlinks = async () => {
     <>
       <Navbar />
       <div className="w-full h-screen text-slate-800 bg-green-300">
-        <div className="grid grid-row-2 md:grid-cols-2 w-full min-h-screen bg-[#225ac0]">
+        <div id="id" className="grid  grid-row-2 md:grid-cols-2 w-full min-h-screen bg-[#225ac0]">
           <div className="flex bg-amber-300 justify-center items-start px-10 md:px-20 pt-40 md:pt-30 flex-col">
             <h1 className="font-bold text-xl md:text-3xl">Create your linktree</h1>
             <p className="font-bold pb-1">Step 1: Claim your Handle *</p>
@@ -113,7 +113,7 @@ const submitlinks = async () => {
                 <input
                   value={item.linktext || ""}
                   onChange={(e) => handleChange(index, item.link, e.target.value)}
-                  className="bg-white w-1/4 px-4 py-1 rounded-full"
+                  className="bg-white w-1/2 px-4 py-1 rounded-full"
                   type="text"
                   placeholder="Enter link text"
                 />
