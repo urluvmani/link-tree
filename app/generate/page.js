@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import Navbar from "../components/Navbar";
 import { useSearchParams } from "next/navigation";
-const page = () => {
+const Page = () => {
   const params = useSearchParams();
   const [links, setlinks] = useState([{ link: "", linktext: "" }]);
   const [handle, sethandle] = useState(params.get("handle"));
@@ -190,4 +190,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
