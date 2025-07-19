@@ -58,6 +58,3 @@ npm run dev
 - Download as `.pdf` or `.vcf` for contact sharing
 
 ---
-
-Jab tayyar ho jao GitHub pe publish karne ke liye, mujhe kehna — main `README.md` file bhi bana kar de dunga direct upload ke liye.  
-Agar chaho to page pe social icons, animation ya page counter bhi add kara sakte hain 😊
